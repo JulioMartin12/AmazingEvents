@@ -10,9 +10,9 @@ ul{
 body{
     position: relative;
     background-color: #CDD5DB;
-    padding-bottom: 1em;
+    padding-bottom: 3em;
     min-height: 100vh;
-overflow-x:hidden ;
+   overflow-x:hidden ;
 }
 
 header{
@@ -31,12 +31,15 @@ h2{
   
 }
 
+.card-body button{
+    box-shadow: -5px -4px 6px blue;
+}
 
 
 
 .logo{
     height: 3em;
-    width: 25em;
+    width: 15em;
     background-image: url("../img/Logo_Amazing_Events.png");
     background-size:100% 100%;
      margin: 10px;    
@@ -50,11 +53,24 @@ h2{
     margin-top: 30px;
     margin-bottom: 10px;
     width:20em ;
+    height: 60vh;
     border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
           
    
+}
+
+.cards{
+    
+    align-items: center;
+    width:100vw ;
+    height: 90%;
+
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+            
 }
 
 .card-img-top{
@@ -70,43 +86,56 @@ h2{
     margin-top:10px;
 }
 
+.card-body{
+    gap:18px;
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+}
+
 
 /* ----FOOTER----- */
 .footer{
-    /*  position: sticky; */
-    position:absolute;
-  
+     position:absolute;
      width: 100%;
-     height: 6em;
+     height: 3em;
      background-color: lightseagreen;
-   
-  display: flex;
-  align-content: row;
-  align-items: center;
-  justify-content: baseline;
-  bottom: 0%;
+    display: flex;
+    align-items: center;
+ 
+   bottom: 0%;
 
      
  }
  
  .container-social-media{
-     margin-top: 10px;
-     width: 50vw;
+     width: 50%;
      height: 9vh;
+   
  
  }
  
  .lista-iconos-footer {
+    width: 50%;
+    height: 70%;
     list-style: none;
     display: flex;
     flex-direction: row;
     align-items: center;
-    
+    align-content: center;
+   gap: 10px;
+   margin-top: 10px;
+   margin-left: 10px;
+       
  }
  
  .lista-iconos-footer li{
      margin-left: 10px;
-     margin-bottom: 30px;
+     margin: 0%;
+
+  
  
  }
  
@@ -133,12 +162,11 @@ h2{
  }
  .conteiner-cohort
  { position:absolute;
-     margin-top: auto;
-     margin-bottom: auto;
      width: 30%;
      height: 60%;
      right:2%;
      text-align:end;
+     bottom: 40%;
    
     
  }
@@ -149,55 +177,35 @@ h2{
  }
 
  /* --checkbox y busqueda */
- .container-busqueda{
- position: relative;
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-margin-top: 30px;
- border: 3px solid blueviolet;
- height: 30vh;
-
-}
-
-.form-busqueda{
+ .checkbox{
+    width: 90%;
+    height: 35vh;
+   margin-top: 40px;
+   margin-right: auto;
+   margin-left: auto;
     display: flex;
-    flex-direction: row;
-   border: 3px solid green;
-   position: relative; 
-   width: 70vw;
-   height: 30vh;
-   background-color: rebeccapurple;
-   z-index: -1;
- 
-}
-.icon-busqueda{
-    background-image: url("../img/icons8-búsqueda.svg");
-    width: 2.5em;
-    height: 2.5em;
- 
-
-
+    flex-direction:row;
+    flex-wrap: wrap;
+   
+   align-items: baseline;
+  
  }
- .input-busqueda{
-    width: 5em;
+
+ .tamanio-serch{
+    width: 40vw;
  }
+
 
 .active-btn{
     background-color: violet;
     border-radius: 5px;
 }
 
-.main-contac{
-    position: relative;
-    width: 60vw;
-    height: 50vh;
-    background-color: orange;
-    border: 3px solid green;
-    z-index: 20;
-   margin-left: auto;
-   margin-right: auto;
- 
+
+.main-contact form{
+    font-size: 20px;
+    font-weight:700;
+
 }
 
 .contact{
@@ -213,15 +221,103 @@ margin-top: 30px;
     border: 2px solid blue;
 }
 
-.card-deatils{
-    height: 100vh;
-    border: 5px solid black ;
+header.details-header {
+    height: 10%;
 }
+
+.card-deatils{
+height: 100%;
+border: 3px solid green;
+}
+
 .main-details{
-    height: 30vh;
+    height: 60vh;
+    background-color: antiquewhite;
+
+}
+
+/* ----CARRUSEL----- */
+.carrusel-home{
+    height:20vh ;
+    background-color: aqua;
+    display: flex;
+    flex-direction: row;
+    align-items: space-between;
+   
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.carrusel-home svg{
+    width: 50px;
+    height: 50px;
+    color: black;
+    margin-left: 40%;
+    margin-right: 40%;
+
+}
+
+.doble-rigth{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/* ---stats--- */
+
+td{
+    height: 2em;
+}
+
+th{
+    font-size: 1.5em;
+}
+
+table{
+    width: 80%;
+    height: 70%;
+    box-shadow: 4px 5px 3px black;
+}
+
+.main-stats{
+    width: 80%;
+    height: 70%; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ---contact --- */
+.btn-contact{
+    display: flex;
+    justify-content: flex-end;
+}
+.btn-contact button {
+   
+  
+
+box-shadow: 4px 5px 3px black;
+   
+   
 }
 
 /* ----MEDIA QUERY----- */
+
+@media (max-width: 575.98px) { 
+    .checkbox{
+        width: 100%;
+        height: 15vh;
+       margin-top: 10px;  
+      
+     }
+ }
+
+
 @media (min-width: 576px) {
 
       .menu{
@@ -247,7 +343,7 @@ margin-top: 30px;
   
  
 .row-contact{
-    border: 2px solid green;
+   
     margin-left: auto;
     margin-right: auto;
     margin-top: .5px;
@@ -255,6 +351,13 @@ margin-top: 30px;
     padding-bottom: 10px;
    
 }
+.details{
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+  
+}
+
 
 
 @media (min-width: 768px) { 
@@ -291,9 +394,11 @@ margin-top: 30px;
     width:20em ;
     border-radius: 10px;
     
+    
           
    
 }
+
 
  }
 
@@ -317,9 +422,21 @@ margin-top: 30px;
      
 }
 
-#card-deatils{
-   height:10vh ;
-}
+.checkbox{
+    width: 100%;
+    height: 15vh;
+   margin-top: 10px;
+
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    align-items: center;
+  align-content: center;
+
+  
+ }
+
+
 
 /* ---formulario contact--- */
 
