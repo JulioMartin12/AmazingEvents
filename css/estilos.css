@@ -1,0 +1,333 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+ul{
+  padding-left: 0%;  
+}
+body{
+    position: relative;
+    background-color: #CDD5DB;
+    padding-bottom: 1em;
+    min-height: 100vh;
+overflow-x:hidden ;
+}
+
+header{
+    
+height: 30vh;
+}
+.carousel{
+    height: 40%;
+  background-color: lightseagreen;
+  
+}
+
+h2{
+
+    text-align: center;
+  
+}
+
+
+
+
+.logo{
+    height: 3em;
+    width: 25em;
+    background-image: url("../img/Logo_Amazing_Events.png");
+    background-size:100% 100%;
+     margin: 10px;    
+} 
+
+/* ----CARDS---- */
+
+  .card{
+    
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    width:20em ;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+          
+   
+}
+
+.card-img-top{
+    position: relative;
+    width: 15em;
+    height: 10em;
+    top: 20px;
+    box-shadow: -8px -2px 8px 3px black; 
+}
+
+.card-title{
+    text-align: center;
+    margin-top:10px;
+}
+
+
+/* ----FOOTER----- */
+.footer{
+    /*  position: sticky; */
+    position:absolute;
+  
+     width: 100%;
+     height: 6em;
+     background-color: lightseagreen;
+   
+  display: flex;
+  align-content: row;
+  align-items: center;
+  justify-content: baseline;
+  bottom: 0%;
+
+     
+ }
+ 
+ .container-social-media{
+     margin-top: 10px;
+     width: 50vw;
+     height: 9vh;
+ 
+ }
+ 
+ .lista-iconos-footer {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+ }
+ 
+ .lista-iconos-footer li{
+     margin-left: 10px;
+     margin-bottom: 30px;
+ 
+ }
+ 
+ .icono-footer1{
+     width: 2.5em;
+     height: 2.5em;
+     background-image: url("../img/instagram.svg");
+     background-size: 100% 100%;
+ }
+ 
+ 
+ .icono-footer2{
+     width: 2.5em;
+     height: 2.5em;
+     background-image: url("../img/facebook.svg");
+     background-size: 100% 100%;
+ }
+ 
+ .icono-footer3{
+     width: 2.5em;
+     height: 2.5em;
+     background-image: url("../img/whatsapp.svg");
+     background-size: 100% 100%;
+ }
+ .conteiner-cohort
+ { position:absolute;
+     margin-top: auto;
+     margin-bottom: auto;
+     width: 30%;
+     height: 60%;
+     right:2%;
+     text-align:end;
+   
+    
+ }
+ 
+ .conteiner-cohort p{
+     font-size: 30px;
+     font-weight: 600;
+ }
+
+ /* --checkbox y busqueda */
+ .container-busqueda{
+ position: relative;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+margin-top: 30px;
+ border: 3px solid blueviolet;
+ height: 30vh;
+
+}
+
+.form-busqueda{
+    display: flex;
+    flex-direction: row;
+   border: 3px solid green;
+   position: relative; 
+   width: 70vw;
+   height: 30vh;
+   background-color: rebeccapurple;
+   z-index: -1;
+ 
+}
+.icon-busqueda{
+    background-image: url("../img/icons8-búsqueda.svg");
+    width: 2.5em;
+    height: 2.5em;
+ 
+
+
+ }
+ .input-busqueda{
+    width: 5em;
+ }
+
+.active-btn{
+    background-color: violet;
+    border-radius: 5px;
+}
+
+.main-contac{
+    position: relative;
+    width: 60vw;
+    height: 50vh;
+    background-color: orange;
+    border: 3px solid green;
+    z-index: 20;
+   margin-left: auto;
+   margin-right: auto;
+ 
+}
+
+.contact{
+    position: relative;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    
+   
+}
+
+.border-texto{
+    border: 2px solid blue;
+}
+
+.card-deatils{
+    height: 100vh;
+    border: 5px solid black ;
+}
+.main-details{
+    height: 30vh;
+}
+
+/* ----MEDIA QUERY----- */
+@media (min-width: 576px) {
+
+      .menu{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        padding-bottom: 0%;
+      
+    
+    
+    }
+
+  
+
+
+    /* ------CARDS---- */
+
+   
+    } 
+
+  
+ 
+.row-contact{
+    border: 2px solid green;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: .5px;
+    padding: 0%;
+    padding-bottom: 10px;
+   
+}
+
+
+@media (min-width: 768px) { 
+.btn-rigth{
+    position:absolute;
+    text-align:end;
+    right: 5px;
+ 
+}
+
+    .logo{
+        height: 10vh;
+        width: 10vw;
+        background-image: url("../img/Logo_Amazing_Events.png");
+        background-size:100% 100%;
+        left: 0%;
+    }
+  
+
+ 
+
+.lista-menu li{
+    margin-left:20px;
+    border-radius: 5px;
+    box-shadow: -2px 5px 5px gray  ;
+
+}
+
+
+.card{
+    
+   margin-top: 20px;
+    margin-bottom: 5px;
+    width:20em ;
+    border-radius: 10px;
+    
+          
+   
+}
+
+ }
+
+@media (min-width: 992px) { 
+  
+  .row-cols-md-3{
+    width: 100vw;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   }
+
+   .card{
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width:20em ;
+    border-radius: 10px;
+     
+}
+
+#card-deatils{
+   height:10vh ;
+}
+
+/* ---formulario contact--- */
+
+              
+       
+ }
+
+
+ 
+
+ 
