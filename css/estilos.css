@@ -307,6 +307,14 @@ box-shadow: 4px 5px 3px black;
 }
 
 /* ----MEDIA QUERY----- */
+@media (max-width: 449px) { 
+   .navbar-toggler-icon{
+    display:flex;
+   }
+ }
+
+
+
 
 @media (max-width: 575.98px) { 
     .checkbox{

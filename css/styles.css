@@ -1,0 +1,39 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+.logo{
+    height: 3em;
+    width: 8em;
+    background-image: url("../img/Logo_Amazing_Events.png");
+    background-size:100% 100%;
+     margin: 10px;    
+} 
+
+/* ----MEDIA QUERY----- */
+@media (max-width: 449px) { 
+    .logo{
+        height:3em;
+        width:80vw;
+        background-image: url("../img/Logo_Amazing_Events.png");
+        background-size:100% 100%;
+         margin: 10px;    
+    } 
+
+   
+
+    .btn-nav{
+        display: none;
+    }
+
+    .lista-menu{
+        display: flex;
+        flex-direction: column;
+    }
+
+  .lista-menu li{
+     font-size: 30px;
+    }
+  }
