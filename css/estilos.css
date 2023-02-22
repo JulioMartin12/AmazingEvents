@@ -22,7 +22,8 @@ height: 30vh;
 .carousel{
     height: 40%;
   background-color: lightseagreen;
-  
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 h2{
