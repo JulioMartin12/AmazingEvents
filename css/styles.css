@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+body{
+  position: relative;
+  background-color: #CDD5DB;
+  padding-bottom: 3em;
+  min-height: 100vh;
+ overflow-x:hidden ;
+}
+
 .logo{
     height: 3em;
     width: 8em;
@@ -52,6 +60,94 @@ height: 10vh;
 }
 
 
+/* ------CheckBox and Search-------- */
+
+
+/* ----FOOTER----- */
+.footer{
+  position:absolute;
+  width: 100%;
+  height: 3em;
+  background-color: lightseagreen;
+ display: flex;
+ align-items: center;
+
+bottom: 0%;
+
+  
+}
+
+.container-social-media{
+  width: 50%;
+  height: 7vh;
+ 
+
+
+
+}
+
+.lista-iconos-footer {
+ width: 30vw;
+ height: 7vh;
+ list-style: none;
+ display: flex;
+ flex-direction: row;
+ justify-content: start;
+margin-left: 0%;
+padding: 0%;
+
+ 
+
+    
+}
+
+.lista-iconos-footer li{
+  margin-left:10px;
+
+ 
+
+
+
+}
+
+.icono-footer1{
+  width: 2.5em;
+  height: 2.5em;
+  background-image: url("../img/instagram.svg");
+  background-size: 100% 100%;
+}
+
+
+.icono-footer2{
+  width: 2.5em;
+  height: 2.5em;
+  background-image: url("../img/facebook.svg");
+  background-size: 100% 100%;
+}
+
+.icono-footer3{
+  width: 2.5em;
+  height: 2.5em;
+  background-image: url("../img/whatsapp.svg");
+  background-size: 100% 100%;
+}
+.conteiner-cohort
+{ position:absolute;
+  width: 30%;
+  height: 60%;
+  right:2%;
+  text-align:end;
+  bottom: 40%;
+
+ 
+}
+
+.conteiner-cohort p{
+  font-size: 30px;
+  font-weight: 600;
+  padding-right: 30px;
+}
+
 
 
 
@@ -98,13 +194,32 @@ height: 10vh;
     }
     .rigth .bi-chevron-double-right{
       justify-content: center;
-     border: 2px solid blue;
    align-items: center;
    align-content: center;
     }
 
+    .container-social-media .container-fluid {
+      display: flex;
+      flex-direction: row;
+      justify-content:flex-start;
+      align-items: start;
+      align-content: flex-start;
+      width: 100%;
     
+    }
+ 
+    
+    .container-social-media .container-fluid ul{
+      justify-content:flex-start;
+    }
+    p{
+      color: green;
+      background-color: #D90368;
+      width: 100%;
+      right: 40px;
+    }
   }
+ 
 
   @media (min-width: 768px) { 
   .lista-menu{
@@ -128,4 +243,85 @@ height: 10vh;
      box-shadow: -5px -4px 5px #D90368;
   
     }
+
+    .d-flex-form{
+      display: flex;
+      justify-content: center;
+      align-items:center ;
+    
+    }
+    .row-checkbox{
+     
+      justify-content: center;
+      align-items:center ;
+    }
+  }
+
+
+ /* ---MD--- */
+ @media (max-width: 767.98px) { 
+.d-flex .form-control{
+  border: 2px solid black;
+height: 9vh;
+width:100%;
+}
+
+.checkbox-order{
+ flex-wrap: nowrap;
+ width: 100vw;
+}
+
+.row-checkbox{
+margin-left: 20px;
+
+}
+
+
+.icon-busqueda{
+height: 15%;
+width: 10%;
+padding: 0%;
+
+}
+
+
+
+/* .icon-busqueda img{
+  border: 2px solid red;
+height: 75%;
+width: 75%;
+padding: 0%;
+
+} */
+
+  }
+  /* ----LG----- */
+  @media (max-width: 992) { 
+    .checkbox-order{
+      margin: 0%;
+      padding: 0%;
+    }
+    .d-flex-form{
+      justify-content:start ;
+    }
+    .checkbox-order {
+      margin-left: 25px;
+     
+    }
+
+  }
+
+
+  @media (max-width: 1199.98px) { 
+    .checkbox-order {
+      justify-content:space-between;
+      
+    }
+.checkbox {
+
+  flex-direction:row ;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+}
   }
