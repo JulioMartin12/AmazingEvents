@@ -19,12 +19,34 @@ body{
     background-size:100% 100%;
      margin: 10px;    
 } 
+.active-btn{
+  background-color:#CDD5DB;
+  border-radius: 3px;
+}
+.card .btn {
+  background-color: #56C4C5;
+}
+
+.card .btn:hover {
+  background-color: blue;
+}
+
+
+.lista-menu li:hover{
+  box-shadow: 0px 0px 3px blue;
+  background-color: #D90368;
+}
+.lista-menu .active-btn:hover{
+  box-shadow: 0px 0px 3px blue;
+  background-color: #D90368;
+}
+
 /* ------carrusel--------- */
 .carrusel{
   height: 8vh;
   width: 100%;
   display: flex;
-  background-color: lightseagreen;
+  background-color:#56C4C5;
   justify-content: space-around;
   text-align: center;
   align-content: baseline;
@@ -63,12 +85,171 @@ height: 10vh;
 /* ------CheckBox and Search-------- */
 
 
+
+/* ----CARDS---- */
+
+.card{
+    
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  width:20em ;
+  height: 60vh;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+
+        
+ 
+}
+
+.cards{
+  
+  align-items: center;
+  width:100vw ;
+  height: 90%;
+
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+          
+}
+
+.card-img-top{
+  position: relative;
+  width: 15em;
+  height: 10em;
+  top: 20px;
+  box-shadow: -8px -2px 8px 3px black; 
+}
+
+.card-title{
+  text-align: center;
+  margin-top:10px;
+}
+
+.card-body{
+  gap:18px;
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+}
+
+
+/* ---stats--- */
+
+td{
+  height: 2em;
+}
+
+th{
+  font-size: 1.5em;
+}
+
+table{
+  width: 80%;
+  height: 70%;
+  box-shadow: 4px 5px 3px black;
+}
+
+.main-stats{
+  width: 80%;
+  height: 70%; 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---contact --- */
+.btn-contact{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+
+.btn-contact button {
+ 
+
+
+box-shadow: 4px 5px 3px black;
+ 
+ 
+}
+
+.main-contact form{
+  font-size: 20px;
+  font-weight:700;
+
+}
+
+
+.contact{
+  position: relative;
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  
+ 
+}
+.row-contact{
+  box-shadow:2px 4px 5px black ;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+   
+}
+.btn-contact button {
+  background-color: #56C4C5;
+}
+.btn-contact button:hover {
+  background-color: blue;
+}
+
+/* ----Details---- */
+.main-details{
+
+  width: 90%;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+.card-deatils{
+ box-shadow: 5px 5px 5px;
+  width:90%;
+  height: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.center-text{
+display: flex;
+justify-content: center;
+ text-align: center;
+ 
+
+}
+.cards-ditais{
+  box-shadow: -10px -10px 5px ;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70vw;
+  height: 100%;
+
+}
+
 /* ----FOOTER----- */
 .footer{
   position:absolute;
   width: 100%;
   height: 3em;
-  background-color: lightseagreen;
+  background-color: #56C4C5;
  display: flex;
  align-items: center;
 
@@ -93,6 +274,7 @@ bottom: 0%;
  display: flex;
  flex-direction: row;
  justify-content: start;
+ align-items: center;
 margin-left: 0%;
 padding: 0%;
 
@@ -133,9 +315,9 @@ padding: 0%;
 }
 .conteiner-cohort
 { position:absolute;
-  width: 30%;
+  width: 55%;
   height: 60%;
-  right:2%;
+  right:.5%;
   text-align:end;
   bottom: 40%;
 
@@ -145,7 +327,7 @@ padding: 0%;
 .conteiner-cohort p{
   font-size: 30px;
   font-weight: 600;
-  padding-right: 30px;
+  padding-right: 5px;
 }
 
 
@@ -213,8 +395,6 @@ padding: 0%;
       justify-content:flex-start;
     }
     p{
-      color: green;
-      background-color: #D90368;
       width: 100%;
       right: 40px;
     }
@@ -283,6 +463,15 @@ width: 10%;
 padding: 0%;
 
 }
+.lista-menu li{
+  font-size: 1em;
+  border-bottom: 2px solid #D90368;
+  border-right: 2px solid #D90368;
+  width: 50%;
+  margin-bottom: 10px;
+  border-radius:5px;
+  box-shadow: 3px 5px 3px #D90368;
+ }
 
 
 
@@ -324,4 +513,15 @@ padding: 0%;
   flex-wrap: wrap;
 
 }
+
+
+  }
+
+  @media (min-width: 1200px) { 
+    .aling-cards{
+     margin-left: auto;
+     margin-right: auto;
+  
+     }
+
   }
