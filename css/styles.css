@@ -89,26 +89,20 @@ height: 10vh;
 /* ----CARDS---- */
 
 .card{
-    
-  align-items: center;
-  margin-top: 30px;
-  margin-bottom: 10px;
-  width:20em ;
-  height: 60vh;
-  border-radius: 10px;
+  margin-top: 10px;
+  width: 15rem;
+  height: 13rem;
   margin-left: auto;
   margin-right: auto;
-
-        
- 
+  background-color:transparent;
+  border: none;  
+  top: 10px;     
 }
 
 .cards{
-  
   align-items: center;
   width:100vw ;
   height: 90%;
-
   border-radius: 10px;
   margin-left: auto;
   margin-right: auto;
@@ -116,26 +110,43 @@ height: 10vh;
 }
 
 .card-img-top{
-  position: relative;
-  width: 15em;
-  height: 10em;
-  top: 20px;
+  object-fit: cover;
+  width:100%;
+  height:100%;
   box-shadow: -8px -2px 8px 3px black; 
+ 
 }
 
 .card-title{
   text-align: center;
-  margin-top:10px;
 }
 
 .card-body{
-  gap:18px;
-  width: 70%;
+  margin-top: 15px;
+  gap: 10px;
+  width: 90%;
+  height:30%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: baseline;
+ 
 }
+
+
+
+.card-completa{
+  width:95%;
+  height: 71vh;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
 
 
 /* ---stats--- */
@@ -343,7 +354,44 @@ padding: 0%;
          margin: 10px;    
     } 
 
-   
+    .carrusel{
+      height: 6.5vh;
+      width: 100%;
+      display: flex;
+      background-color:#56C4C5;
+      justify-content: space-around;
+      text-align: center;
+      align-content: baseline;
+    }
+    
+    .carrusel svg{
+       width: 40px;
+       height: 40px;
+    
+       
+     
+    }
+     .left{
+    align-items: center;
+    height: 8vh;
+    
+      
+    
+    }
+    
+    
+    .center{
+      text-align: center;
+      font-size: 1.3em;
+      font-weight: 600;
+    }
+    
+    
+    .left{
+     align-items: end;
+      height: 8vh;
+    }
+    
 
     .btn-nav{
         display: none;
@@ -398,6 +446,21 @@ padding: 0%;
       width: 100%;
       right: 40px;
     }
+
+    .card-completa{
+      margin-top: 5px;
+      width:100vw;
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      margin-left: 30px;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+      background-color: white;
+     
+     
+    }
   }
  
 
@@ -435,6 +498,7 @@ padding: 0%;
       justify-content: center;
       align-items:center ;
     }
+   
   }
 
 
@@ -482,6 +546,22 @@ width: 75%;
 padding: 0%;
 
 } */
+.card-completa{
+  margin-top: 5px;
+   width:85vw;
+   height: 80vh;
+   display: flex;
+   flex-direction: column;
+   margin-left: 10px;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 10px;
+   background-color: white;
+   margin-left: auto;
+   margin-right:auto ;
+ 
+
+ }
 
   }
   /* ----LG----- */
