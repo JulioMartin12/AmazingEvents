@@ -19,6 +19,6 @@ for (const event of data.events) {
 
 }
 
-console.log(htmlEvent);
+
 
 
