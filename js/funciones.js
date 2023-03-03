@@ -19,62 +19,44 @@ function cargarCategorias(){
 }
 
 
+
 function cardsXcategorias(eventos){
   let categorias = [];
   let checks = document.querySelectorAll('.form-check-input');
 checks.forEach((check) => {
      check.addEventListener('change', ()=>{
      if(check.checked){
-      document.querySelector('.add-card').innerHTML="";
+      document.querySelector('.add-card').innerHTML=" ";
       console.log("seleccionada" + check.labels[0].outerText);
       categorias.push(check.labels[0].outerText);
       console.log(categorias)
-      return eventos.filter(evento =>{
-          categorias.includes(evento.category);
-      })
-     }else{
-       categorias = categorias.filter(categoria => categoria !=check.labels[0].outerText)
-      console.log("Deleccionada" )
-      console.log(categorias)
-       return eventos.filter(evento =>{
-          categorias.includes(evento.category);
-     }
-   })
-   
-})
-}
-
-
- 
-
-
-
-
-
-
-
-function filtrarCard(cards,filtro){
-
-}
-/* let inputs = document.getElementsByTagName('input');
-console.log(inputs);
- 
-for (let index = 0; index < inputs.length; index++) {
-  let input = inputs[index];
-  input.addEventListener('change',function() {
-    console.log("se selecciono la categotia: " + input.value);
-    if(input.checked){
+      cargarCards(eventos.filter(evento =>
+       categorias.includes(evento.category)
       
-      console.log("Seleccionado" + input.innerText);
-    }
-    else{
-      console.log("Deseleccionado" + input.innerText)
+    ))
+      
+     }else{
+      categorias = categorias.filter(categoria => categoria !=check.labels[0].outerText)
+      console.log("Deleccionada" )
+      if(categorias.length == 0){
+        document.querySelector('.add-card').innerHTML="";
+        cargarCards(eventos) ;
+        console.log(eventos)
+      }else{
+       
+        categorias = categorias.filter(categoria => categoria !=check.labels[0].outerText)
+        console.log(categorias.length)
+        document.querySelector('.add-card').innerHTML="";
+        cargarCards( eventos.filter(evento =>
+          categorias.includes(evento.category))
+       )
+      }
+      }
+   
+});
+});
+}
 
-    }
-    
-  })
-  
-} */
 
 
 
@@ -91,7 +73,19 @@ function crearCategoria(evento,contador) {
 
 /* -------Cards----------- */
 
-function crearCard(event) {
+
+function cargarCards(eventos){
+  let htmlEvent= "";
+  eventos.forEach(evento => {
+      htmlEvent = crearCard(evento);
+      document.querySelector('.add-card').innerHTML += htmlEvent;
+    
+  });
+ }
+
+
+
+ function crearCard(event) {
   return `<div class="col">
   <div class="card-completa"> 
   <div class="card">
@@ -106,6 +100,7 @@ function crearCard(event) {
 </div> `
  
 }
+
 
 
 
