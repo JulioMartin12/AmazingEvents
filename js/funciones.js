@@ -1,40 +1,88 @@
 /* ---------Categorias------- */
 
-let categoria = [];
-let contador =1;
-let htmlCategory ="";
+cargarCategorias();
 
-data.events.forEach(evento => {
-  if(!categoria.includes(evento.category)){
-    console.log(evento.category)
-    categoria.push(evento.category);
-    htmlCategory +=  crearCategoria(evento,contador++)  
-   }
-   document.querySelector('.categoria').innerHTML = htmlCategory;
-});;
+function cargarCategorias(){
+  let categoria = [];
+  let contador =1;
+  let htmlCategory ="";
+  
+  data.events.forEach(evento => {
+    if(!categoria.includes(evento.category)){
+      console.log(evento.category)
+      categoria.push(evento.category);
+      htmlCategory +=  crearCategoria(evento,contador++)  
+     }
+     document.querySelector('.categoria').innerHTML = htmlCategory;
+  });
 
-let inputs = document.getElementsByTagName('input');
+}
+
+
+function cardsXcategorias(eventos){
+  let categorias = [];
+  let checks = document.querySelectorAll('.form-check-input');
+checks.forEach((check) => {
+     check.addEventListener('change', ()=>{
+     if(check.checked){
+      document.querySelector('.add-card').innerHTML="";
+      console.log("seleccionada" + check.labels[0].outerText);
+      categorias.push(check.labels[0].outerText);
+      console.log(categorias)
+      return eventos.filter(evento =>{
+          categorias.includes(evento.category);
+      })
+     }else{
+       categorias = categorias.filter(categoria => categoria !=check.labels[0].outerText)
+      console.log("Deleccionada" )
+      console.log(categorias)
+       return eventos.filter(evento =>{
+          categorias.includes(evento.category);
+     }
+   })
+   
+})
+}
+
+
+ 
+
+
+
+
+
+
+
+function filtrarCard(cards,filtro){
+
+}
+/* let inputs = document.getElementsByTagName('input');
 console.log(inputs);
  
 for (let index = 0; index < inputs.length; index++) {
   let input = inputs[index];
   input.addEventListener('change',function() {
     console.log("se selecciono la categotia: " + input.value);
-    if(input.checked)
-    console.log("Seleccionado")
-    else
-    console.log("Deseleccionado")
+    if(input.checked){
+      
+      console.log("Seleccionado" + input.innerText);
+    }
+    else{
+      console.log("Deseleccionado" + input.innerText)
+
+    }
     
   })
   
-}
+} */
 
 
 
 function crearCategoria(evento,contador) {
    return`<div class="centrar form-check form-check-inline ">
-    <input class="form-check-input" type="checkbox" id="inlineCheckbox${contador}" value="option${contador}">
-    <label class="form-check-label" for="inlineCheckbox">${evento.category}</label>
+   <label class="form-check-label" >
+   <input class="form-check-input" type="checkbox" id="inlineCheckbox${contador}" value="option${contador}">
+   ${evento.category}</label>
   </div>`
   
 }
