@@ -1,5 +1,5 @@
 /* ---------Categorias------- */
-
+let categoriasCheched = [];
 cargarCategorias();
 
 function cargarCategorias(){
@@ -9,7 +9,6 @@ function cargarCategorias(){
   
   data.events.forEach(evento => {
     if(!categoria.includes(evento.category)){
-      console.log(evento.category)
       categoria.push(evento.category);
       htmlCategory +=  crearCategoria(evento,contador++)  
      }
@@ -21,40 +20,65 @@ function cargarCategorias(){
 
 
 function cardsXcategorias(eventos){
-  let categorias = [];
+ 
   let checks = document.querySelectorAll('.form-check-input');
-checks.forEach((check) => {
+  checks.forEach((check) => {
      check.addEventListener('change', ()=>{
      if(check.checked){
       document.querySelector('.add-card').innerHTML=" ";
-      console.log("seleccionada" + check.labels[0].outerText);
-      categorias.push(check.labels[0].outerText);
-      console.log(categorias)
+      categoriasCheched.push(check.labels[0].outerText);
       cargarCards(eventos.filter(evento =>
-       categorias.includes(evento.category)
+        categoriasCheched.includes(evento.category)
       
     ))
       
      }else{
-      categorias = categorias.filter(categoria => categoria !=check.labels[0].outerText)
-      console.log("Deleccionada" )
-      if(categorias.length == 0){
+      categoriasCheched = categoriasCheched.filter(categoria => categoria !=check.labels[0].outerText)
+      if(categoriasCheched.length == 0){
         document.querySelector('.add-card').innerHTML="";
         cargarCards(eventos) ;
-        console.log(eventos)
-      }else{
+        }else{
        
-        categorias = categorias.filter(categoria => categoria !=check.labels[0].outerText)
-        console.log(categorias.length)
+          categoriasCheched = categoriasCheched.filter(categoria => categoria !=check.labels[0].outerText)
         document.querySelector('.add-card').innerHTML="";
-        cargarCards( eventos.filter(evento =>
-          categorias.includes(evento.category))
+        cargarCards( eventos.filter(evento => 
+          categoriasCheched.includes(evento.category))
        )
       }
       }
    
 });
 });
+}
+
+function cardXtexto(eventos, texto){
+  let flag =false;
+   eventos.forEach(evento => {
+  
+      if(evento.name.toLowerCase() == texto ||evento.description.toLowerCase().replaceAll(",", " ").split(" ").includes(texto)){
+        document.querySelector('.add-card').innerHTML="";
+        cargarCards(eventos.filter(evento => (evento.name.toLowerCase() == texto ||evento.description.toLowerCase().replaceAll(",", " ").split(" ").includes(texto) ) || categoriasCheched.includes(evento.category) ))
+        flag= true;
+      }
+   } )
+   
+    if(!flag){  
+      document.querySelector('.add-card').innerHTML="";
+      alert("Mejore su busqueda con datos más especificos.");
+      cargarCards(eventos);
+    }
+}
+
+
+
+function buscar(eventos){
+  let boton = document.querySelector('.icon-busqueda');
+  let input = document.querySelector('.form-control');
+  boton.addEventListener('click',(e) => {
+    e.preventDefault();
+    cardXtexto(eventos,input.value.toLowerCase());      
+  })
+
 }
 
 

@@ -3,6 +3,8 @@ let todasCategorias = [];
 cargarCards(data.events);
 cardsXcategorias(data.events)
 
+buscar(data.events)
+
 
 
 

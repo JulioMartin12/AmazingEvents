@@ -14,3 +14,5 @@ data.events.forEach(event => {
 console.log(htmlUpcomingEvent);
 
 cardsXcategorias(upcomingEvents)
+
+buscar(upcomingEvents)

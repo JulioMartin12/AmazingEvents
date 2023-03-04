@@ -1,7 +1,7 @@
 let pastEvents=[];
 pastEvent();
 cardsXcategorias(pastEvents)
-console.log(pastEvents);
+
 
 
 
@@ -20,3 +20,4 @@ function pastEvent(){
 }
 
 
+buscar(pastEvents);
