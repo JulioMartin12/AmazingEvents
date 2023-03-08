@@ -505,10 +505,99 @@ padding: 0%;
      
     }
 
-  
+    .card-deatils{
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-top: 30px;
+      margin-bottom: 20px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 70vw;
+      height: 95%;
+      background-color: white;
+      border-radius: 5px;
+   
+    
+    }
   }
 
-
+  @media (min-width: 450px) and (max-width: 767.98px) { 
+    .d-flex .form-control{
+      border: 2px solid black;
+    height: 9vh;
+    width:100%;
+    }
+    
+    .checkbox-order{
+     flex-wrap: nowrap;
+     width: 100vw;
+    }
+    
+    .row-checkbox{
+    margin-left: 20px;
+    
+    }
+    
+    
+    .icon-busqueda{
+    height: 15%;
+    width: 10%;
+    padding: 0%;
+    
+    }
+    .lista-menu li{
+      font-size: 1em;
+      border-bottom: 2px solid #D90368;
+      border-right: 2px solid #D90368;
+      width: 50%;
+      margin-bottom: 10px;
+      border-radius:5px;
+      box-shadow: 3px 5px 3px #D90368;
+     }
+    
+    
+    
+    /* .icon-busqueda img{
+      border: 2px solid red;
+    height: 75%;
+    width: 75%;
+    padding: 0%;
+    
+    } */
+    .card-completa{
+      margin-top: 20px;
+       width:60vw;
+       height: 80vh;
+       display: flex;
+       flex-direction: column;
+    
+       margin-left: 10px;
+       justify-content: center;
+       align-items: center;
+       margin-bottom: 30px;
+       background-color: white;
+      margin-left: auto;
+      margin-right: auto;
+    
+      
+      }
+      .card-deatils{
+        flex-direction: row;
+      flex-wrap: wrap;
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-right: 5px;
+        width: 50vw;
+        height: 100%;
+        background-color: white;
+        border-radius: 5px;
+     
+      
+      }
+     
+    
+     }
+    
 
   @media (min-width: 768px) { 
   .lista-menu{
@@ -566,76 +655,29 @@ padding: 0%;
       height: 80vh;
       
     }
+    .card-deatils{
+      margin-top: 30px;
+      margin-bottom: 30px;
     
+      margin-left: 10px;
+      margin-right: 5px;
+      width: 70vw;
+      height: 90%;
+   
+      background-color: white;
+      border-radius: 5px;
+   
+    
+    }
     
   }
 
 
  /* ---MD--- */
- @media (min-width: 449px) and (max-width: 767.98px) { 
-.d-flex .form-control{
-  border: 2px solid black;
-height: 9vh;
-width:100%;
-}
-
-.checkbox-order{
- flex-wrap: nowrap;
- width: 100vw;
-}
-
-.row-checkbox{
-margin-left: 20px;
-
-}
-
-
-.icon-busqueda{
-height: 15%;
-width: 10%;
-padding: 0%;
-
-}
-.lista-menu li{
-  font-size: 1em;
-  border-bottom: 2px solid #D90368;
-  border-right: 2px solid #D90368;
-  width: 50%;
-  margin-bottom: 10px;
-  border-radius:5px;
-  box-shadow: 3px 5px 3px #D90368;
- }
-
-
-
-/* .icon-busqueda img{
-  border: 2px solid red;
-height: 75%;
-width: 75%;
-padding: 0%;
-
-} */
-.card-completa{
-  margin-top: 5px;
-   width:60vw;
-   height: 80vh;
-   display: flex;
-   flex-direction: column;
-   margin-left: 10px;
-   justify-content: center;
-   align-items: center;
-   margin-bottom: 30px;
-   background-color: white;
-  margin-left: auto;
-  margin-right: auto;
-  }
- 
-
- }
 
   
   /* ----LG----- */
-  @media (max-width: 992) { 
+  @media  (min-width: 767.98px) and (max-width: 992) { 
     .checkbox-order{
       margin: 0%;
       padding: 0%;
@@ -647,11 +689,24 @@ padding: 0%;
       margin-left: 25px;
      
     }
+    .card-deatils{
+      margin-top: 10px;
+    
+      margin-left: 10px;
+      margin-right: 5px;
+      width: 70vw;
+      height: 90%;
+      border: 2px solid black;
+      background-color: white;
+      border-radius: 5px;
+   
+    
+    }
 
   }
 
 
-  @media (max-width: 1199.98px) { 
+  @media(min-width: 992) and (max-width: 1199.98px) { 
     .checkbox-order {
       justify-content:space-between;
       
@@ -664,21 +719,44 @@ padding: 0%;
 
 }
 
-.card-deatils{
+/* .card-deatils{
   margin-top: 10px;
 
   margin-left: auto;
   margin-right: auto;
   width: 70vw;
   height: 100%;
+  background-color: white;
 
 
-}
+} */
 .textosCard{
   margin: 3% 0%;
 }
 .card-completa{
-   width: 80%;
+  margin:30px 15px;
+  margin-bottom: 30px;
+  width: 60vw;
+  height: 95%;
+  margin-left: auto;
+  margin-right: auto
+ 
+ 
+
+}
+
+  .card-deatils{
+    margin-top: 10px;
+  
+    margin-left: 10px;
+    margin-right: 5px;
+    width: 70vw;
+    height: 90%;
+    border: 2px solid black;
+    background-color: white;
+    border-radius: 5px;
+ 
+  
   }
 
   }
@@ -690,17 +768,28 @@ padding: 0%;
   
      }
 
-     .card-deatils{
-      margin-top: 10px;
-    
-      margin-left: 10px;
-      margin-right: 5px;
-      width: 70vw;
-      height: 100%;
-    
+     .card-completa{
+      margin:20px 15px;
+     
+      width: 22vw;
+      height: 92%;
+     
+      margin-bottom: 30px;
     
     }
     .textosCard{
       margin: 3% 0%;
+    }
+    .card-deatils{
+      margin-top: 30px;
+    
+      margin-left: 10px;
+      margin-right: 5px;
+      width: 70vw;
+      height: 90%;
+      background-color: white;
+      border-radius: 5px;
+   
+    
     }
   }
