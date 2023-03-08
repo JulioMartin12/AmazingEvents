@@ -119,7 +119,7 @@ function cargarCards(eventos){
       <h5 class="card-title col-row-6">${event.name}</h5>
       <p class="col-row-12">${event.description}</p>  
       <p col-row-6>Precio $${event.price}</p>
-      <a href="../details.html?id=${event._id}">More...</a>
+      <a class="botonEnlace" href="../details.html?id=${event._id}">More...</a>
     </div>
   </div>
 </div> `
