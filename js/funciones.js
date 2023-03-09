@@ -52,10 +52,10 @@ function cardsXcategorias(eventos){
 function cardXtexto(eventos, texto){
   let flag =false;
    eventos.forEach(evento => {
-  
-      if(evento.name.toLowerCase() == texto ||evento.description.toLowerCase().replaceAll(",", " ").split(" ").includes(texto)){
+      if((evento.name.toLowerCase().includes(texto) ||
+       evento.description.toLowerCase().replaceAll(",", " ").split(" ").includes(texto))){
         document.querySelector('.add-card').innerHTML="";
-        cargarCards(eventos.filter(evento => ((evento.name.toLowerCase() == texto ||evento.description.toLowerCase().replaceAll(",", " ").split(" ").includes(texto) )) && categoriasCheched.includes(evento.category) ))
+        cargarCards(eventos.filter(evento => ((evento.name.toLowerCase().includes(texto) ||evento.description.toLowerCase().replaceAll(",", " ").split(" ").includes(texto) && categoriasCheched.includes(evento.category))))) 
         flag= true;
       }
    } )
@@ -72,7 +72,8 @@ function buscar(eventos){
   let input = document.querySelector('.form-control');
   boton.addEventListener('click',(e) => {
     e.preventDefault();
-    cardXtexto(eventos,input.value.toLowerCase());      
+    console.log(input.value.toLowerCase())
+    cardXtexto(eventos , input.value.toLowerCase());      
   })
 
 }
