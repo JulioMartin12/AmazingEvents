@@ -17,8 +17,6 @@ function cargarCategorias(){
 
 }
 
-
-
 function cardsXcategorias(eventos){
  
   let checks = document.querySelectorAll('.form-check-input');
@@ -37,6 +35,7 @@ function cardsXcategorias(eventos){
       if(categoriasCheched.length == 0){
         document.querySelector('.add-card').innerHTML="";
         cargarCards(eventos) ;
+        
         }else{
        
           categoriasCheched = categoriasCheched.filter(categoria => categoria !=check.labels[0].outerText)
@@ -45,8 +44,7 @@ function cardsXcategorias(eventos){
           categoriasCheched.includes(evento.category))
        )
       }
-      }
-   
+      }   
 });
 });
 }
@@ -57,7 +55,7 @@ function cardXtexto(eventos, texto){
   
       if(evento.name.toLowerCase() == texto ||evento.description.toLowerCase().replaceAll(",", " ").split(" ").includes(texto)){
         document.querySelector('.add-card').innerHTML="";
-        cargarCards(eventos.filter(evento => (evento.name.toLowerCase() == texto ||evento.description.toLowerCase().replaceAll(",", " ").split(" ").includes(texto) ) || categoriasCheched.includes(evento.category) ))
+        cargarCards(eventos.filter(evento => ((evento.name.toLowerCase() == texto ||evento.description.toLowerCase().replaceAll(",", " ").split(" ").includes(texto) )) && categoriasCheched.includes(evento.category) ))
         flag= true;
       }
    } )
@@ -69,8 +67,6 @@ function cardXtexto(eventos, texto){
     }
 }
 
-
-
 function buscar(eventos){
   let boton = document.querySelector('.icon-busqueda');
   let input = document.querySelector('.form-control');
@@ -81,9 +77,6 @@ function buscar(eventos){
 
 }
 
-
-
-
 function crearCategoria(evento,contador) {
    return`<div class="centrar form-check form-check-inline ">
    <label class="form-check-label" >
@@ -93,10 +86,7 @@ function crearCategoria(evento,contador) {
   
 }
 
-
-
 /* -------Cards----------- */
-
 
 function cargarCards(eventos){
   let htmlEvent= "";
@@ -106,8 +96,6 @@ function cargarCards(eventos){
     
   });
  }
-
-
 
  function crearCard(event) {
   return `<div class="col">
@@ -123,7 +111,6 @@ function cargarCards(eventos){
     </div>
   </div>
 </div> `
- 
 }
 /* <button type="button" class="btn col-row-6 btn-primary">More...</button>     */
 
