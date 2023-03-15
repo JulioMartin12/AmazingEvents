@@ -43,7 +43,7 @@ let data = {
       "name":"Parisian Museum",
       "date":"2022-11-02",
       "description":"A unique tour in the city of lights, get to know one of the most iconic places.",
-      "category":"Museum",
+      "category":"Cinema",
       "place":"Paris",
       "capacity":8200,
       "estimate":8200,
