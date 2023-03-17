@@ -1,6 +1,6 @@
 
 let todasCategorias = [];
-
+let upcomingEvents = [];
 
 
 obtenerCards();
@@ -12,14 +12,17 @@ async function obtenerCards(){
       console.log(response);
       const data = await response.json();
       console.log(data);
-      upcomingEvent(data)     
+      upcomingEvent(data) 
+      cardsXcategorias(upcomingEvents)
+buscar(upcomingEvents)
+       
   }  catch(error) {
       console.log(error)
   }
 }
 
 
-let upcomingEvents = [];
+
 
 cardsXcategorias(upcomingEvents)
 buscar(upcomingEvents)

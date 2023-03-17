@@ -1,8 +1,7 @@
 let pastEvents=[];
 let todasCategorias = [];
 
-cardsXcategorias(pastEvents)
-buscar(pastEvents);
+
 obtenerCards();
 
 async function obtenerCards(){
@@ -11,7 +10,9 @@ async function obtenerCards(){
       console.log(response);
       const data = await response.json();
       console.log(data);
-      pastEvent(data);    
+      pastEvent(data);  
+      cardsXcategorias(pastEvents)
+buscar(pastEvents);  
   }  catch(error) {
       console.log(error)
   }

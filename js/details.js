@@ -1,13 +1,29 @@
-let eventos = data.events;
+let eventos = [];
+let urlApi ="https://mindhub-xj03.onrender.com/api/amazing"
+obtenerCards();
+async function obtenerCards(){
+  try {
+      const response = await fetch(urlApi);
+      console.log(response);
+      const data = await response.json();
+      console.log(data);
+      eventos = data.events;
+      cargarDetails(eventos);
+  }  catch(error) {
+      console.log(error)
+  }
+}
+
+
  console.log(eventos)
-cargarDetails(eventos);
+
 
 function cargarDetails (listaEventos){
     let queryString  = location.search;
    let param = new URLSearchParams(queryString);
   
  //details(eventos.find(evento => evento == param.get('id')));
- let card = data.events.find(events =>
+ let card = listaEventos.find(events =>
     events._id == param.get('id')); 
   console.log(" Evento " +  param.get('id') + " "+ card)
   details(card);
