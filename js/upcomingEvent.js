@@ -1,9 +1,32 @@
+
+let todasCategorias = [];
+
+
+
+obtenerCards();
+
+
+async function obtenerCards(){
+  try {
+      const response = await fetch(urlApi);
+      console.log(response);
+      const data = await response.json();
+      console.log(data);
+      upcomingEvent(data)     
+  }  catch(error) {
+      console.log(error)
+  }
+}
+
+
 let upcomingEvents = [];
-upcomingEvent()
+
 cardsXcategorias(upcomingEvents)
 buscar(upcomingEvents)
 
-function upcomingEvent() {
+
+
+function upcomingEvent(data) {
   let htmlUpcomingEvent = "";
   data.events.forEach(event => {
     let currentDate = new Date(data.currentDate);

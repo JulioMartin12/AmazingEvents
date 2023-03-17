@@ -1,6 +1,24 @@
 /* ---------Categorias------- */
+let urlApi ="https://mindhub-xj03.onrender.com/api/amazing"
 let categoriasCheched = [];
-cargarCategorias();
+let data =[];
+obtenerDatos()
+
+
+
+async function obtenerDatos(){
+  try {
+      const response = await fetch(urlApi);
+      console.log(response);
+      const dato = await response.json();
+      console.log(dato);
+      data=dato;
+      cargarCategorias();
+  }  catch(error) {
+     /*  console.log(error) */
+  }
+}
+
 
 function cargarCategorias(){
   let categoria = [];

@@ -1,11 +1,24 @@
 let pastEvents=[];
-pastEvent();
+let todasCategorias = [];
+
 cardsXcategorias(pastEvents)
+buscar(pastEvents);
+obtenerCards();
+
+async function obtenerCards(){
+  try {
+      const response = await fetch(urlApi);
+      console.log(response);
+      const data = await response.json();
+      console.log(data);
+      pastEvent(data);    
+  }  catch(error) {
+      console.log(error)
+  }
+}
 
 
-
-
-function pastEvent(){ 
+function pastEvent(data){ 
 
   let htmlPastEvent ="";
   data.events.forEach(event => {
@@ -21,4 +34,3 @@ function pastEvent(){
 }
 
 
-buscar(pastEvents);

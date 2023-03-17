@@ -1,6 +1,22 @@
+let urlApi ="https://mindhub-xj03.onrender.com/api/amazing"
+let data =[];
+obtenerDatos()
 
-crearTable();
-upcomingEventsStatisticsByCategory()
+
+async function obtenerDatos(){
+  try {
+      const response = await fetch(urlApi);
+      console.log(response);
+      const dato = await response.json();
+      console.log(dato);
+      data=dato;
+      crearTable(data);
+      upcomingEventsStatisticsByCategory(data)
+  
+  }  catch(error) {
+   /*    console.log(error) */
+  }
+}
 /* pastEventsStatisticsByCategory() */
 /* eventoMayorPorcentajeAsistencia(data.events);
 eventoMenorPorcentajeAsistencia(data.events);
@@ -144,7 +160,7 @@ return event.estimate;
 }
 
 
-function crearTable (){
+function crearTable (data){
     let htmlTable = ` <tbody>
     <tr>
       <th scope="row" colspan="3" class="table-info border-dark titulos">Events Statics</th>
@@ -154,7 +170,7 @@ function crearTable (){
       <th>Events with the lovest percentage of attendance</th>
       <th>Event with large capacity</th>
     </tr>`
-   htmlTable += cargarEventsStatics();
+   htmlTable += cargarEventsStatics(data);
  /*   console.log(cargarEventsStatics()) */
 
    htmlTable +=`<tr class="eventsPercentage" >
@@ -168,7 +184,7 @@ function crearTable (){
       <th>Revenues</td>
       <th>Percentage of attendance</th>
     </tr>`
-    htmlTable +=eventsStatics(upcomingEventsStatisticsByCategory());
+    htmlTable +=eventsStatics(upcomingEventsStatisticsByCategory(data));
     htmlTable +=`  <tr>
       <th scope="row" colspan="3" class="table-info border-dark titulos">Past Events statics by category</th>
     </tr>
@@ -177,7 +193,7 @@ function crearTable (){
       <th>Revenues</th>
       <th>Percentage of attendance</th>
     </tr>`
-    htmlTable +=eventsStatics(pastEventsStatisticsByCategory());
+    htmlTable +=eventsStatics(pastEventsStatisticsByCategory(data));
     htmlTable +=`</tbody>`
 
   document.querySelector('.table').innerHTML = htmlTable;
@@ -254,24 +270,24 @@ function mayorCantidadElementos(){
 
 
 function pastEventsStatisticsByCategory(){
-  let events = devolverEventosSegunTiempo(false, new Date(data.currentDate))
+  let events = devolverEventosSegunTiempo(false, new Date(data.currentDate),data.events)
   events.forEach(event => {
-    console.log(" lista pasado " + event.name + " " + asistenciaOestimado(event));
+   /*  console.log(" lista pasado " + event.name + " " + asistenciaOestimado(event)); */
   })
   return eventBycategory(events);
 }
 
 
 function pastEventsStatics(){
-  let pastEvent = devolverEventosSegunTiempo(false, new Date(data.currentDate));
+  let pastEvent = devolverEventosSegunTiempo(false, new Date(data.currentDate),data.events);
  return eventBycategory(pastEvent);
 }
 
 
-function upcomingEventsStatisticsByCategory(){
-  let events = devolverEventosSegunTiempo(true, new Date(data.currentDate))
+function upcomingEventsStatisticsByCategory(data){
+  let events = devolverEventosSegunTiempo(true, new Date(data.currentDate), data.events)
   events.forEach(event => {
-    console.log(" lista presente " + event.category + " " + asistenciaOestimado(event));
+ /*    console.log(" lista presente " + event.category + " " + asistenciaOestimado(event)); */
   })
  return eventBycategory(events);
 }
@@ -281,13 +297,16 @@ function eventBycategory(eventsByCategory){
   let eventXCategorias = [];
   eventsByCategory.forEach(event => {
     if(eventXCategorias.length == 0){
+      let prueba = event;
       console.log("Array Vacio")
       eventXCategorias.push({category: event.category,
       revenues: (event.price * asistenciaOestimado(event)),
       estimate: asistenciaOestimado(event),
       porcentajeAsistencia : 0, 
       capacity : event.capacity,
+    
     });
+   /*  console.log(prueba.category + " " + ); */
     }else {
       if(verificarExiste(eventXCategorias, event)){
         console.log("verdadero")
@@ -300,6 +319,7 @@ function eventBycategory(eventsByCategory){
           porcentajeAsistencia : 0, 
           capacity : event.capacity,
         });
+        console.log(event);
       }
     
     } 
@@ -312,7 +332,7 @@ function eventBycategory(eventsByCategory){
           
           result +=  " " +event.category + " $" + event.revenues + " " +  event.porcentajeAsistencia.toFixed(3) + "% ";
       }
-      console.log("Categorias : "+ result );
+   /*    console.log("Categorias : "+ result ); */
     return eventXCategorias;
 }
 
@@ -325,20 +345,21 @@ function verificarExiste(eventos, evento){
       event.revenues += (evento.price *asistenciaOestimado(evento));
       event.assistance += asistenciaOestimado(evento);
       console.log( "actualizar valores: ")
+      event.capacity += evento.capacity;
       band= true;
     }
-    console.log(event.category+ " "+evento.category)
+    console.log(event.category +" Nueva " + event.capacity + " vieja"+evento.capacity + "asistenciaOestimado(evento) ")
   })
   return band;
 }
 
 
 /* pasamos por referencia el tiempo , true para los upcoming y false para los past, devuelve un array con los elementos según si tiempo */
-function devolverEventosSegunTiempo(tiempo, date){
+function devolverEventosSegunTiempo(tiempo, date, events){
   if(tiempo){
-    return data.events.filter(event => new Date(event.date) > date)
+    return events.filter(event => new Date(event.date) > date)
   }else {
-    return data.events.filter(event => new Date(event.date)< date)
+    return events.filter(event => new Date(event.date)< date)
   }
 
 }
