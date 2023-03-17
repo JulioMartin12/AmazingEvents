@@ -12,6 +12,7 @@ async function obtenerDatos(){
       data=dato;
       crearTable(data);
       upcomingEventsStatisticsByCategory(data)
+      pastEventsStatisticsByCategory(data);
   
   }  catch(error) {
    /*    console.log(error) */
@@ -150,14 +151,7 @@ function eventoMayorPorcentajeAsistencia(eventos){
     }
 
 
-    /* Retorna la asistencia o el estimado */
-function asistenciaOestimado(event){
-  if(event.hasOwnProperty('assistance')){
-return event.assistance;
-  }else{
-return event.estimate;
-  }
-}
+
 
 
 function crearTable (data){
@@ -269,25 +263,28 @@ function mayorCantidadElementos(){
 }
 
 
-function pastEventsStatisticsByCategory(){
+function pastEventsStatisticsByCategory(data){
   let events = devolverEventosSegunTiempo(false, new Date(data.currentDate),data.events)
   events.forEach(event => {
-   /*  console.log(" lista pasado " + event.name + " " + asistenciaOestimado(event)); */
-  })
+    console.log(" lista pasado" + event.category + "  asistencia " + asistenciaOestimado(event)) +" capacidad "+ event.capacity;
+   })
   return eventBycategory(events);
 }
 
 
-function pastEventsStatics(){
-  let pastEvent = devolverEventosSegunTiempo(false, new Date(data.currentDate),data.events);
- return eventBycategory(pastEvent);
-}
+/* function pastEventsStatics(){
+  let events = devolverEventosSegunTiempo(false, new Date(data.currentDate),data.events);
+  events.forEach(event => {
+    console.log(" lista pasado" + event.category + "  asistencia " + asistenciaOestimado(event)) +" capacidad "+ event.capacity;
+   })
+ return eventBycategory(events);
+} */
 
 
 function upcomingEventsStatisticsByCategory(data){
   let events = devolverEventosSegunTiempo(true, new Date(data.currentDate), data.events)
   events.forEach(event => {
- /*    console.log(" lista presente " + event.category + " " + asistenciaOestimado(event)); */
+   console.log(" lista presente " + event.category + "  asistencia " + asistenciaOestimado(event) +" capacidad "+ event.capacity);
   })
  return eventBycategory(events);
 }
@@ -301,7 +298,7 @@ function eventBycategory(eventsByCategory){
       console.log("Array Vacio")
       eventXCategorias.push({category: event.category,
       revenues: (event.price * asistenciaOestimado(event)),
-      estimate: asistenciaOestimado(event),
+      assistance: asistenciaOestimado(event),
       porcentajeAsistencia : 0, 
       capacity : event.capacity,
     
@@ -315,7 +312,8 @@ function eventBycategory(eventsByCategory){
         console.log("falso" )
         eventXCategorias.push({category: event.category,
           revenues: (event.price * asistenciaOestimado(event)),
-          estimate: asistenciaOestimado(event),
+          assistance: asistenciaOestimado(event),
+         
           porcentajeAsistencia : 0, 
           capacity : event.capacity,
         });
@@ -328,9 +326,9 @@ function eventBycategory(eventsByCategory){
 
     let result="";
       for (const event of eventXCategorias) {
-           event.porcentajeAsistencia =  (event.estimate *100) / event.capacity 
-          
-          result +=  " " +event.category + " $" + event.revenues + " " +  event.porcentajeAsistencia.toFixed(3) + "% ";
+           event.porcentajeAsistencia =  (event. assistance *100) / event.capacity 
+          console.log(event.estimate + " " + event.capacity);
+          result +=  " " +event.category + " $" + event.revenues + " " +  event.porcentajeAsistencia.toFixed(2) + "% ";
       }
    /*    console.log("Categorias : "+ result ); */
     return eventXCategorias;
@@ -338,17 +336,21 @@ function eventBycategory(eventsByCategory){
 
 function verificarExiste(eventos, evento){
   let band = false;
+  let asistencia = 0;
   eventos.forEach(event => {
     if(event.category === evento.category){
-      console.log ( " es everdadero las 2 ")
-      console.log( "categorias iguales: ")
+      console.log( "categorias iguales: "+ event.category + " " +evento.category)
       event.revenues += (evento.price *asistenciaOestimado(evento));
-      event.assistance += asistenciaOestimado(evento);
-      console.log( "actualizar valores: ")
+      console.log("asistencia Acumulada " + event.assistance +" " + asistenciaOestimado(evento))
+      asistencia=asistenciaOestimado(evento);
+      event.assistance += asistencia;
+      console.log("asistencia Acumulada " + event.assistance +" " + asistenciaOestimado(evento))
       event.capacity += evento.capacity;
       band= true;
+  /*     console.log("Tamaño de arreglo "+eventos.length+" categoria "+event.category + " Capacidad vieja"+  + evento.capacity + " capacidad acumulada "+ event.capacity+ " asistencia nueva "+asistenciaOestimado(evento) )+
+      " asistencia Acumulada " + event.assistance; */
     }
-    console.log(event.category +" Nueva " + event.capacity + " vieja"+evento.capacity + "asistenciaOestimado(evento) ")
+    
   })
   return band;
 }
@@ -364,3 +366,14 @@ function devolverEventosSegunTiempo(tiempo, date, events){
 
 }
 
+
+    /* Retorna la asistencia o el estimado */
+    function asistenciaOestimado(event){
+      if(event.hasOwnProperty('assistance')){
+        console.log("assistance "+event.assistance)
+    return Number(event.assistance);
+      }else{
+        console.log("estimate "+event.assistance)
+    return Number(event.estimate);
+      }
+    }

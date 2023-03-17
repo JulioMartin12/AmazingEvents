@@ -44,7 +44,7 @@ function cargarDetails (listaEventos){
        <div class="detallaInferio col-12 ">
          <p class=" col-12"><b> Place: </b>${evento.place}</p>
            <p class="col-12 "><b>Capacity: </b>${evento.capacity}</p>
-           <p class="col-12 "><b>Assistance: </b>${evento.assistance}</p>
+           <p class="col-12 "><b>Assistance: </b>${asistenciaOestimado(evento)}</p>
            <p class="col-12 "><b>Precio: </b>${evento.price}</p>
        </div>
        
@@ -54,4 +54,12 @@ function cargarDetails (listaEventos){
   
     document.querySelector('.card-deatils').innerHTML = htmlDetails;
   
+  }
+
+  function asistenciaOestimado(event){
+    if(event.hasOwnProperty('assistance')){
+  return event.assistance;
+    }else{
+  return event.estimate;
+    }
   }
