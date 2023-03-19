@@ -356,7 +356,7 @@ function verificarExiste(eventos, evento){
 }
 
 
-/* pasamos por referencia el tiempo , true para los upcoming y false para los past, devuelve un array con los elementos según si tiempo */
+/* pasamos por referencia el tiempo , true para los upcoming y false para los past, devuelve un array con los elementos según su tiempo */
 function devolverEventosSegunTiempo(tiempo, date, events){
   if(tiempo){
     return events.filter(event => new Date(event.date) > date)
