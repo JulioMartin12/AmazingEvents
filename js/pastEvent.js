@@ -21,4 +21,4 @@ function pastEvent(){
 }
 
 
-buscar(pastEvents);
+//buscar(pastEvents);

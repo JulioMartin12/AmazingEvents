@@ -1,7 +1,7 @@
 let upcomingEvents = [];
 upcomingEvent()
 cardsXcategorias(upcomingEvents)
-buscar(upcomingEvents)
+//buscar(upcomingEvents)
 
 function upcomingEvent() {
   let htmlUpcomingEvent = "";

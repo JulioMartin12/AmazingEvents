@@ -1,9 +1,12 @@
 let todasCategorias = [];
 
 cargarCards(data.events);
+cargarCategorias();
 cardsXcategorias(data.events)
+cardXtexto(data.events,"");
 
-buscar(data.events)
+//cargarCards(data.events);
+//buscar(data.events)
 
 
 

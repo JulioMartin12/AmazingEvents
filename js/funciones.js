@@ -1,6 +1,12 @@
+
+
 /* ---------Categorias------- */
 let categoriasCheched = [];
+
 cargarCategorias();
+
+
+let input = document.querySelector('input[type=search]');
 
 function cargarCategorias(){
   let categoria = [];
@@ -18,11 +24,12 @@ function cargarCategorias(){
 }
 
 function cardsXcategorias(eventos){
- 
   let checks = document.querySelectorAll('.form-check-input');
+ 
   checks.forEach((check) => {
      check.addEventListener('change', ()=>{
      if(check.checked){
+      console.log("contenido del input " + input.value)
       document.querySelector('.add-card').innerHTML=" ";
       categoriasCheched.push(check.labels[0].outerText);
       cargarCards(eventos.filter(evento =>
@@ -49,8 +56,27 @@ function cardsXcategorias(eventos){
 });
 }
 
-function cardXtexto(eventos, texto){
-  let flag =false;
+function cardXtexto(eventos, text){
+let texto="";
+console.log(input);
+input.addEventListener('input' , () =>{
+  texto =input.value;
+   console.log(texto);
+   console.log("entró")
+    eventos.forEach(evento => {
+      if((evento.name.toLowerCase().includes(texto) ||
+       evento.description.toLowerCase().includes(texto))){
+        document.querySelector('.add-card').innerHTML="";
+        cargarCards(eventos.filter(evento => ((evento.name.toLowerCase().includes(texto) ||evento.description.toLowerCase().includes(texto)/*  && categoriasCheched.includes(evento.category) */)))) 
+        //flag= true;
+      }
+    } )
+  
+ 
+});
+
+
+  /*  let flag =false;
    eventos.forEach(evento => {
       if((evento.name.toLowerCase().includes(texto) ||
        evento.description.toLowerCase().replaceAll(",", " ").split(" ").includes(texto))){
@@ -74,7 +100,7 @@ function buscar(eventos){
     e.preventDefault();
     console.log(input.value.toLowerCase())
     cardXtexto(eventos , input.value.toLowerCase());      
-  })
+  }) */
 
 }
 
