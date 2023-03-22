@@ -79,142 +79,117 @@
 
     <!-- ---FORMULARIO BUSQUEDA -->
     <!--checkbox-->
-  <div class="checkbox ">
-    <div class="row row-checkbox">
-    <div class="col-7 col-xs-8 col-md-12 col-lg-7 col-xl-8 "> 
-    <div class="container-fluid center-checkbox-search checkbox-order categoria">
- <!--    <div class="centrar form-check form-check-inline ">
-      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-      <label class="form-check-label" for="inlineCheckbox1">Category</label>
+
+<!-- -----MAIN-------- -->
+<div id="app">
+  <!-- ---FORMULARIO BUSQUEDA -->
+  <!--checkbox-->
+<div class="checkbox ">
+  <div class="row row-checkbox">
+  <div class="col-7 col-xs-8 col-md-12 col-lg-7 col-xl-8 "> 
+  <div class="container-fluid center-checkbox-search checkbox-order categoria">
+   <!--  <div v-for="categoria of categorias" class="centrar form-check form-check-inline ">
+      <input v-model="categoriasSeleccionadas" class="m-1 form-check-input" type="checkbox" :name="casa" :id="casa" :value="casa" >
+      <label class="form-check-label" :for="casa">
+        {{categoria}} </label>
+     
+     </div> -->
+     <div v-for="categoria of categorias" class="custom-control custom-switch form-check-inline m-4">
+      <input  v-model="categoriasSeleccionadas" :value="categoria" type="checkbox" class="custom-control-input" :id="categoria">
+      <label class="custom-control-label" :for="categoria">{{categoria}}</label>
     </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-      <label class="form-check-label" for="inlineCheckbox2">Category</label>
+
     </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-      <label class="form-check-label" for="inlineCheckbox3">Category</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
-      <label class="form-check-label" for="inlineCheckbox4">Category</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
-      <label class="form-check-label" for="inlineCheckbox5">Category</label>
-    </div> -->
-  </div>
-  </div>
-    <!--checkbox-->
+</div>
+  <!--checkbox-->
 <!--search-->
-      <div class="col-12 col-xs-6 col-md-12 col-lg-5 col-xl-4 ">
-        <div class="container-fluid">
-
-      <form class="d-flex  d-flex-form" role="search">
-        <div class=" col-10 col-xs-6 col-md-4 col-lg-8 col-xl-9">
-          <div class="container-fluid form-order">
-          <input class="form-control me-2 tamanio-serch" type="search" placeholder="Search" aria-label="Search">
-        </div>
-      </div>
-        <div class="col-2 col-md-2 col-lg-4col-xl-3">
-          <div class="container-fluid">
-        <button class="btn icon-busqueda">
-          <img src="./img/icons8-búsqueda.svg" alt="buscar">
-           </button> 
-          </div>
-        </div>
-        </form></div>
-   </div>
-  </div>
-  </div>
-  
-
-
-  
-
-  <!-- cards -->
-  <div class="row row-cols-1 cols-sm-2
-  row-cols-md-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-4  aling-cards add-card">
-  <!--   <div class="col">
-      <div class="card">
-        <img src="./img/Marathon.jpg" class="rounded float-start card-img-top" alt="Maraton">
-        <div class="card-body">
-          <h5 class="card-title">Titulo</h5>
-          <p>Texto Descriptivo</p>
-          <p>Precio $5000</p><button type="button" class="btn     btn-primary">More...</button>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card">
-        <img src="./img/Costume_Party.jpg" class="rounded float-start card-img-top" alt="Maraton">
-        <div class="card-body">
-          <h5 class="card-title">Titulo</h5>
-          <p>Texto Descriptivo</p>
-          <p>Precio $5000</p><button type="button" class="btn     btn-primary">More...</button>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card">
-        <img src="./img/Museum_Tour.jpg" class="rounded float-start card-img-top" alt="Maraton">
-        <div class="card-body">
-          <h5 class="card-title">Titulo</h5>
-          <p>Texto Descriptivo</p>
-          <p>Precio $5000</p><button type="button" class="btn     btn-primary">More...</button>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card">
-        <img src="./img/Food_Fair.jpg" class="rounded float-start card-img-top" alt="Maraton">
-        <div class="card-body">
-          <h5 class="card-title">Titulo</h5>
-          <p>Texto Descriptivo</p>
-          <p>Precio $5000</p><button type="button" class="btn     btn-primary">More...</button>
-        </div>
-      </div>
-    </div> -->
-  </div>
-  </main>
- 
-  <!-- ----FOOTER --- -->
- <footer class="footer">
-    <div class="container-social-media col-7 ">
+    <div class="col-12 col-xs-6 col-md-12 col-lg-5 col-xl-4 ">
       <div class="container-fluid">
-      <!-- Section: Social media -->
-      <ul class="lista-iconos-footer">
-        <!-- Instagram -->
-        <li>
-          <div class="icono-footer1">
-            </div>
-        
-         <!-- Facrbook -->
-        <li> <div class="icono-footer2">
-          
-        </div></li>
-         <!-- Whatsapp -->
-        <li><div class="icono-footer3">
-        
-        </div></li>
-      </ul>   
-      
+
+    <form class="d-flex  d-flex-form" role="search">
+      <div class=" col-10 col-xs-6 col-md-4 col-lg-8 col-xl-9">
+        <div class="container-fluid form-order">
+       <!--  <input @input="filtrarPorTexto" v-model='texto' class="form-control me-2 tamanio-serch" type="search" placeholder="Search" aria-label="Search"> -->
+       <input v.model="texto" v-model='texto' class="form-control me-2 tamanio-serch" type="search" placeholder="Search" aria-label="Search">
       </div>
     </div>
-      <div class="conteiner-cohort col-5">
-        <div class="container-fluid conteiner-coho ">
-        <p>FE04-TN</p>
-       </div>
+      <div class="col-2 col-md-2 col-lg-4col-xl-3">
+        <div class="container-fluid">
+    <!--  <button class="btn icon-busqueda"> -->
+      <img src="./img/icons8-búsqueda.svg" alt="buscar">
+      <!--   </button>  -->
+        </div>
       </div>
-       <!-- Section: Social media -->
-  </footer>
+      </form></div>
+ </div>
+</div>
+</div>
+
+<!-- cards -->
+<!--  {{filtrarPorTexto}}
+{{filtrarPorCategorias}} -->
+
+{{filtroDoble}}
+<div>
+  <h2 v-if="datas.length == 0"  class="m-5">{{mensaje}}</h2>
+</div>
+<div class="row  cols-2
+row-cols-md-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-4  aling-cards add-card"  >
+<div class="col" v-for="event of datas">
+  <div class="card-completa"> 
+  <div class="card">
+    <img :src="event.image" class= "card-img-top img-fluid"  alt="Maraton" style ="width: 15rem; height: 13rem;">
+  </div>
+    <div class="card-body">
+      <h5 class="card-title col-row-6">{{event.name}}</h5>
+      <p class="col-row-12">{{event.description}}</p>  
+      <p col-row-6>Precio ${{event.price}}</p>
+      <a class="botonEnlace" :href= "'./details.html?id='+event._id" >More... </a>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!-- ----FOOTER --- -->
+<footer class="footer">
+  <div class="container-social-media col-7 ">
+    <div class="container-fluid">
+    <!-- Section: Social media -->
+    <ul class="lista-iconos-footer">
+      <!-- Instagram -->
+      <li>
+        <div class="icono-footer1">
+          </div>
+      
+       <!-- Facrbook -->
+      <li> <div class="icono-footer2">
+        
+      </div></li>
+       <!-- Whatsapp -->
+      <li><div class="icono-footer3">
+      
+      </div></li>
+    </ul>   
+    
+    </div>
+  </div>
+    <div class="conteiner-cohort col-5">
+      <div class="container-fluid conteiner-coho ">
+      <p>FE04-TN</p>
+     </div>
+    </div>
+     <!-- Section: Social media -->
+</footer>
+</div>
+
     
 
-      <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+      <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!--   <script src="./js/data.js"></script> -->
-    <script src="./js/funciones.js"></script>
-    <script src="./js/upcomingEvent.js"></script>
+   <!--  <script src="./js/funciones.js"></script> -->
+    <script src="./js/upcomingEventVue.js"></script>
 
 </body>
 </html>
