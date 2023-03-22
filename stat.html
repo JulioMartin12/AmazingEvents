@@ -92,31 +92,25 @@
         </tr>
         <tr class="eventsPercentage" >
         </tr>
-        
+        <tr v-for="element of arrayResultados" >
+         <td>{{element.mayorPorc}}</td>
+          <td>{{element.menorPorc}}</td>
+          <td>{{element.mayorCapacidad}}</td>
+        </tr>
         <tr>
           <th scope="row" colspan="3" class="table-info border-dark titulos">Upcoming events statistics by category</th>
         </tr>
         <tr>
-          <th>{{retornarPorcentaje}}</th>
+          <th>Categories</th>
           <th>Revenues</td>
           <th>Percentage of attendance</th>
         </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-       
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
+        <tr v-for="categoria of upcomingEventsStatistics" >
+          <td>{{categoria.category}}</td>
+    <td>{{categoria.revenues}}</td>
+    <td>{{categoria.porcentajeAsistencia.toFixed(2)}}%</td>
+    </tr>
+               
         <tr>
           <th scope="row" colspan="3" class="table-info border-dark titulos">Past Events statics by category</th>
         </tr>
@@ -125,31 +119,12 @@
           <th>Revenues</th>
           <th>Percentage of attendance</th>
         </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
+        <tr v-for="categoria of pastEventsStatistics" >
+          <td>{{categoria.category}}</td>
+    <td>{{categoria.revenues}}</td>
+    <td>{{categoria.porcentajeAsistencia.toFixed(2)}}%</td>
+    </tr>
+       
       </tbody>
     </table>
 

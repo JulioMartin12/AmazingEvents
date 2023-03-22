@@ -294,7 +294,6 @@ function eventBycategory(eventsByCategory){
   let eventXCategorias = [];
   eventsByCategory.forEach(event => {
     if(eventXCategorias.length == 0){
-      let prueba = event;
       console.log("Array Vacio")
       eventXCategorias.push({category: event.category,
       revenues: (event.price * asistenciaOestimado(event)),
